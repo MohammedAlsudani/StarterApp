@@ -1,0 +1,141 @@
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-kapt")
+}
+
+android {
+    compileSdk = ModuleGradleConfig.compileSDKVersion
+    namespace 'com.common'
+
+    defaultConfig {
+        minSdk = ModuleGradleConfig.minSdkVersion
+        targetSdk = ModuleGradleConfig.targetSDKVersion
+        versionCode = ModuleGradleConfig.versionCode
+        versionName = ModuleGradleConfig.versionName
+        testInstrumentationRunner = ModuleGradleConfig.testInstrumentationRunner
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            debuggable = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            enableAndroidTestCoverage = false
+            minifyEnabled = false
+            debuggable = true
+        }
+    }
+
+
+    buildFeatures {
+        viewBinding = ModuleGradleConfig.viewBindingEnabled
+        dataBinding = ModuleGradleConfig.viewBindingEnabled
+        buildConfig = ModuleGradleConfig.buildConfigEnabled
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = ModuleGradleConfig.kotlinJvmTarget
+        // This compiler argument is needed to use the @Opt-in annotation
+        freeCompilerArgs = freeCompilerArgs + "-Xopt-in=kotlin.RequiresOptIn"
+    }
+
+    flavorDimensions.add(ModuleGradleConfig.flavorDimensions)
+    productFlavors {
+        dev {
+            buildConfigField 'Integer', 'VERSION_CODE', "${ModuleGradleConfig.DEV_VERSION_CODE}"
+            buildConfigField 'String',  'VERSION_NAME', "\"$ModuleGradleConfig.DEV_VERSION_NAME\""
+            buildConfigField 'String',  'DATABASE_NAME', "\"$ModuleGradleConfig.DATABASE_NAME\""
+
+        }
+        qa {
+            buildConfigField 'Integer', 'VERSION_CODE', "${ModuleGradleConfig.QA_VERSION_CODE}"
+            buildConfigField 'String',  'VERSION_NAME', "\"$ModuleGradleConfig.QA_VERSION_NAME\""
+            buildConfigField 'String',  'DATABASE_NAME', "\"$ModuleGradleConfig.DATABASE_NAME\""
+        }
+        uat {
+            buildConfigField 'Integer', 'VERSION_CODE', "${ModuleGradleConfig.UAT_VERSION_CODE}"
+            buildConfigField 'String',  'VERSION_NAME', "\"$ModuleGradleConfig.UAT_VERSION_NAME\""
+            buildConfigField 'String',  'DATABASE_NAME', "\"$ModuleGradleConfig.DATABASE_NAME\""
+        }
+        prod {
+            buildConfigField 'Integer', 'VERSION_CODE', "${ModuleGradleConfig.PROD_VERSION_CODE}"
+            buildConfigField 'String',  'VERSION_NAME', "\"$ModuleGradleConfig.PROD_VERSION_NAME\""
+            buildConfigField 'String',  'DATABASE_NAME', "\"$ModuleGradleConfig.DATABASE_NAME\""
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+}
+
+dependencies {
+    // Foundation
+    implementation(AppDependencies.kotlinStandardLibrary)
+    implementation(AppDependencies.coreKtx)
+    implementation(AppDependencies.appCompat)
+    implementation(AppDependencies.materialComponents)
+    implementation(AppDependencies.constraintLayout)
+
+    // All of the following dependencies is so that the main module that holds
+    // the HiltApp class has access to the dependencies used in the feature/library modules.
+    // Glide
+    implementation(AppDependencies.glide)
+    implementation(AppDependencies.glideOkHttpIntegration)
+    kapt(AppDependencies.glideCompiler)
+
+    // Room
+    implementation(AppDependencies.room)
+    implementation(AppDependencies.roomCoroutinesSupport)
+    kapt(AppDependencies.roomCompiler)
+
+    // ViewModel
+    implementation(AppDependencies.viewModel)
+    implementation(AppDependencies.viewModelSavedState)
+    kapt(AppDependencies.lifeCycleCompiler)
+
+    // Hilt
+    implementation(AppDependencies.hilt)
+    kapt(AppDependencies.hiltCompiler)
+
+    // firebase
+    implementation(AppDependencies.firebaseBom)
+    implementation(AppDependencies.firebaseCrashlytics)
+    implementation(AppDependencies.firebaseAnalytics)
+    implementation(AppDependencies.firebaseAuth)
+    implementation(AppDependencies.firebaseAuthKtx)
+    implementation(AppDependencies.firebaseMessaging)
+    implementation(AppDependencies.firebaseFirestore)
+
+    // json
+    implementation(AppDependencies.gson)
+    implementation(AppDependencies.coil)
+
+    // Retrofit
+    implementation(AppDependencies.retrofit)
+    implementation(AppDependencies.retrofitConverter)
+    
+    // OkHttp
+    implementation(platform(AppDependencies.okHttpBOM))
+    implementation(AppDependencies.okHttp)
+    implementation(AppDependencies.okHttpLogInterceptor)
+
+
+
+    // navigation
+    implementation(AppDependencies.navigation_runtime)
+}
+

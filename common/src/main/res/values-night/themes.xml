@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.App" parent="Theme.MaterialComponents.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/colorSecondaryDark</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryDark</item>
+        <item name="colorThird">@color/colorThirdDark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorAccent">@color/colorAccentDark</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="colorTextPrimary">@color/colorTextPrimaryDark</item>
+        <item name="colorTextSecondary">@color/colorTextSecondaryDark</item>
+        <item name="colorTextThird">@color/colorTextThirdDark</item>
+        <item name="colorBackground">@color/colorBackgroundDark</item>
+        <item name="colorBackgroundSecondary">@color/colorBackgroundSecondaryDark</item>
+        <item name="colorBlue">@color/colorBlueDark</item>
+        <item name="colorGreen">@color/colorGreenDark</item>
+        <item name="colorLineDivider">@color/colorLineDividerDark</item>
+        <item name="colorRed">@color/colorRedDark</item>
+        <item name="colorGray">@color/grey_200</item>
+        <item name="colorYellow">@color/grey_yellow_dark</item>
+        <item name="colorHoloGreen">@color/holo_green_dark</item>
+        <item name="colorHoloRed">@color/holo_red_dark</item>
+        <item name="colorHoloBlue">@color/holo_blue_dark</item>
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="an_error_occurred">An error occurred</string>
+    <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="feedback">Your feedback is appreciated.</string>
+    <string name="rate_this_app">Rate this app now? \n\n ༼ つ ◕_◕ ༽つ ★★★★★ \n\n(In case you have any suggestions shoot me an email! You can find my address when you scroll all the way down. \n\nI\'d love to hear from you!)</string>
+    <string name="never_show_again">Never show again</string>
+
+</resources>

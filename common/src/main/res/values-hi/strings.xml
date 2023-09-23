@@ -1,0 +1,10 @@
+<resources>
+    <string name="an_error_occurred">कुछ त्रुटि हुई</string>
+    <string name="ok">ठीक है</string>
+    <string name="save">सहेजें</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="feedback">आपकी प्रतिक्रिया की सराहना की जाती है।</string>
+    <string name="rate_this_app">क्या आप इस ऐप को अब रेट करना चाहेंगे? \n\n ༼ つ ◕_◕ ༽つ ★★★★★ \n\n(यदि आपके पास कोई सुझाव हो तो मुझे एक ईमेल भेजें! जब आप नीचे तक स्क्रॉल करते हैं, तो मेरा पता मिल जाएगा। \n\nमुझसे सुनने के लिए मुझसे आपकी आवश्यकता है!)</string>
+    <string name="never_show_again">फिर से कभी नहीं दिखाएं</string>
+
+</resources>

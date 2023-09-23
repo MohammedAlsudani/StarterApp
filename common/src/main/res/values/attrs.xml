@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimary" format="color" />
+    <attr name="colorSecondary" format="color" />
+    <attr name="colorThird" format="color" />
+    <attr name="colorAccent" format="color" />
+    <attr name="colorBackground" format="color" />
+    <attr name="colorBackgroundSecondary" format="color" />
+
+    <attr name="colorTextPrimary" format="color" />
+    <attr name="colorTextSecondary" format="color" />
+    <attr name="colorTextThird" format="color" />
+    <attr name="colorBlue" format="color" />
+    <attr name="colorGreen" format="color" />
+    <attr name="colorLineDivider" format="color" />
+    <attr name="colorRed" format="color" />
+    <attr name="colorGray" format="color" />
+    <attr name="colorYellow" format="color" />
+    <attr name="colorHoloGreen" format="color" />
+    <attr name="colorHoloRed" format="color" />
+    <attr name="colorHoloBlue" format="color" />
+</resources>

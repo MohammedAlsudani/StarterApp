@@ -1,0 +1,10 @@
+<resources>
+    <string name="an_error_occurred">حدث خطأ</string>
+    <string name="ok">موافق</string>
+    <string name="save">حفظ</string>
+    <string name="cancel">إلغاء</string>
+    <string name="feedback">نحن نقدر تعليقاتك.</string>
+    <string name="rate_this_app">هل تود تقييم التطبيق الآن؟ \n\n ༼ つ ◕_◕ ༽つ ★★★★★ \n\n(إذا كان لديك أي اقتراحات، فلا تتردد في مراسلتي عبر البريد الإلكتروني! يمكنك العثور على عنوان بريدي عند التمرير إلى الأسفل. \n\nسأكون سعيدًا بالاستماع إليك!)</string>
+    <string name="never_show_again">عدم إظهار مرة أخرى</string>
+
+</resources>
