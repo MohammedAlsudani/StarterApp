@@ -1,4 +1,5 @@
 <resources>
+    <string name="common_server_error">सर्वर त्रुटि</string>
     <string name="an_error_occurred">कुछ त्रुटि हुई</string>
     <string name="ok">ठीक है</string>
     <string name="save">सहेजें</string>

@@ -46,8 +46,6 @@ abstract class MvvmBaseActivity<B : ViewDataBinding, VM : ViewModel> : AppCompat
 
     abstract fun getViewModelClass(): Class<VM>
 
-    private var progressView: View? = null
-
     var connectivityManager: ConnectivityManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,29 +86,7 @@ abstract class MvvmBaseActivity<B : ViewDataBinding, VM : ViewModel> : AppCompat
 
     }
 
-    fun showProgressDialog() {
-        if (progressView == null) {
-            val rootLayout = findViewById<FrameLayout>(android.R.id.content)
-            val inflater = LayoutInflater.from(this)
-            progressView = inflater.inflate(R.layout.progress_layout, null, true)
-            progressView?.isEnabled = false
-            progressView?.setOnClickListener { _: View? -> }
-            rootLayout.addView(progressView)
-            progressView?.bringToFront()
-        }
-    }
-
-    fun hideProgressDialog() {
-        progressView?.let {
-            progressView?.visibility = View.GONE
-            val vg = progressView?.parent as ViewGroup
-            vg.removeView(progressView)
-            progressView = null
-        }
-    }
-
     fun showErrorDialog(message: String?) {
-        hideProgressDialog()
         showDialog(message ?: getString(R.string.an_error_occurred))
     }
 

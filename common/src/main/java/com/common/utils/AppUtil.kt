@@ -13,7 +13,6 @@ import android.util.Base64
 import android.util.Log
 import com.common.BuildConfig
 import com.common.R
-import com.common.modules.PRIZE
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import java.io.BufferedReader
@@ -141,7 +140,7 @@ class AppUtil {
             return showAd
         }
 
-        fun printKeyHash(packageName: String, activity:Activity) {
+        fun printKeyHash(activity: Activity) {
             try {
                 val info: PackageInfo = activity.packageManager.getPackageInfo(
                     activity.packageName,
@@ -164,36 +163,6 @@ class AppUtil {
             val date = Date(timestamp)
             return dateFormat.format(date)
         }
-
-        fun getCoinAddType(coinAddType: String): Int {
-            return when {
-                PRIZE.CORRECT_ANSWER.name == coinAddType -> {
-                    R.string.correct_answer
-                }
-                PRIZE.AD.name == coinAddType -> {
-                    R.string.ads_earned_type
-                }
-                PRIZE.NOT_CORRECT_ANSWER.name == coinAddType -> {
-                    R.string.un_knonw
-                }
-                PRIZE.FEE_SPIN_WHEEL.name == coinAddType -> {
-                    R.string.wheel_spin_fee
-                }
-                PRIZE.SPIN_WHEEL.name == coinAddType -> {
-                    R.string.SPIN_WHEEL
-                }
-                PRIZE.FEE_SCRATCH.name == coinAddType -> {
-                    R.string.scratch_fee
-                }
-                PRIZE.SCRATCH.name == coinAddType -> {
-                    R.string.scratch
-                }
-                else -> {
-                    R.string.un_knonw
-                }
-            }
-        }
-
 
         fun Context.getJsonFromAssets(fileName: String): String? {
             return try {

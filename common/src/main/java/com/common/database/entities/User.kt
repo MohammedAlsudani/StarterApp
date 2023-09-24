@@ -10,8 +10,6 @@ data class User(
     @PrimaryKey var uid: String,
     @ColumnInfo(name = "name") var name: String,
 
-) {
-    constructor() : this("", "")
-}
+)
 
 data class UserResponse(var userAlreadyExist :Boolean = false, val user: User)

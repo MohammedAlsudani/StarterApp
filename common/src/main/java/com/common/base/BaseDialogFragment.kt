@@ -40,7 +40,7 @@ abstract class BaseDialogFragment<B : ViewDataBinding, VM : ViewModel> : DialogF
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL, com.common.R.style.Theme_ShareToWin)
+        setStyle(STYLE_NORMAL, com.common.R.style.Theme_App)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container : ViewGroup?, savedInstanceState: Bundle?): View {
@@ -56,7 +56,7 @@ abstract class BaseDialogFragment<B : ViewDataBinding, VM : ViewModel> : DialogF
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        val dialog = Dialog(activityContext, com.common.R.style.Theme_ShareToWin)
+        val dialog = Dialog(activityContext, com.common.R.style.Theme_App)
         if (isFullSize) {
             val width = ViewGroup.LayoutParams.MATCH_PARENT
             val height = ViewGroup.LayoutParams.MATCH_PARENT

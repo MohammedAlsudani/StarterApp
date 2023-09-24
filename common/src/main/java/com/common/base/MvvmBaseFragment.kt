@@ -50,8 +50,6 @@ abstract class MvvmBaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(
     @Inject
     lateinit var preferenceStorage: SharedPreferenceStorage
 
-    private var progressView: View? = null
-
     @get:LayoutRes
     abstract val layoutId: Int
 
@@ -151,30 +149,7 @@ abstract class MvvmBaseFragment<B : ViewDataBinding, VM : ViewModel> : Fragment(
         snackbar.show()
     }
 
-    fun showProgressDialog() {
-        if (progressView == null) {
-            val rootLayout =activity?.findViewById<FrameLayout>(android.R.id.content)
-            val inflater = LayoutInflater.from(activityContext)
-            progressView = inflater.inflate(R.layout.progress_layout, null, true)
-            progressView?.isEnabled = false
-            rootLayout?.addView(progressView)
-            progressView?.bringToFront()
-        }
-    }
-
-    fun hideProgressDialog() {
-        progressView?.let {
-            progressView?.visibility = View.GONE
-            progressView?.parent?.let {
-                val vg = it as ViewGroup
-                vg.removeView(progressView)
-            }
-            progressView = null
-        }
-    }
-
     fun showErrorDialog(exception: Exception) {
-        hideProgressDialog()
         val defaultMessage = activityContext.getString(R.string.an_error_occurred)
         val errorMessage = exception.message ?: defaultMessage
         val errorClassName = exception.javaClass.simpleName

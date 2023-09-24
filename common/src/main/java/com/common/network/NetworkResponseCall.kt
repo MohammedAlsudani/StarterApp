@@ -43,7 +43,13 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                             NetworkResponse.ServerError(null, code, headers)))
                     }
                 } else {
-                    val convertedErrorBody = try { errorConverter.convert(errorBody) } catch (ex: Exception) { null }
+                    val convertedErrorBody = try {
+                        if (errorBody != null) {
+                            errorConverter.convert(errorBody)
+                        } else {
+                            null
+                        }
+                    } catch (ex: Exception) { null }
                     var errorMessage = "Something went wrong, try again later"
                     if (convertedErrorBody is ErrResponse){
                         convertedErrorBody.errors.firstOrNull()?.desc?.let {

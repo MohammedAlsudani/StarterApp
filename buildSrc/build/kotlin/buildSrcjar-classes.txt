@@ -1,0 +1,1 @@
+D:\StarterApp\buildSrc\build\classes\kotlin\main\AppDependencies.class;D:\StarterApp\buildSrc\build\classes\kotlin\main\DependencyVersion.class;D:\StarterApp\buildSrc\build\classes\kotlin\main\ModuleGradleConfig.class;D:\StarterApp\buildSrc\build\classes\kotlin\main\ProjectModules.class

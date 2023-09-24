@@ -1,15 +1,15 @@
 object DependencyVersion {
     const val coreKTX = "1.8.0"
-    const val kotlin = "1.6.10"
+    const val kotlin = "1.8.22"
     const val kotlinLifecycleRuntime = "2.5.1"
     const val appCompat = "1.4.2"
     const val material = "1.8.0"
     const val constraint = "2.1.4"
     const val compose = "1.2.0"
-    const val composeCompiler = "1.4.3"
+    const val composeCompiler = "1.4.8"
     const val material3 = "1.0.1"
     const val room = "2.4.2"
-    const val hilt = "2.42"
+    const val hilt = "2.44"
     const val hiltNavigationCompose = "1.0.0"
     const val navigation = "2.5.1"
     const val lifecycleVersion = "2.4.1"
@@ -30,7 +30,6 @@ object DependencyVersion {
     const val androidJunit = "1.1.3"
     const val espresso = "3.4.0"
     const val appCenterSdkVersion = "5.0.0"
-
 }
 
 object AppDependencies {

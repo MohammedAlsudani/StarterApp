@@ -1,4 +1,5 @@
 <resources>
+    <string name="common_server_error">خطأ في الخادم</string>
     <string name="an_error_occurred">حدث خطأ</string>
     <string name="ok">موافق</string>
     <string name="save">حفظ</string>

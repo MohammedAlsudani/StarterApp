@@ -3,6 +3,7 @@
 plugins {
     alias(libs.plugins.application)
     alias(libs.plugins.kotlin)
+    id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
 }
 
@@ -16,11 +17,12 @@ android {
         minSdk = ModuleGradleConfig.minSdkVersion
         targetSdk = ModuleGradleConfig.targetSDKVersion
         versionCode = 1
-        versionName = "1.1"
+        versionName = "1.3"
         testInstrumentationRunner = ModuleGradleConfig.testInstrumentationRunner
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildFeatures {
@@ -112,9 +114,20 @@ android {
             signingConfig = signingConfigs.getByName("starterAppProdConfig")
         }
     }
+    hilt {
+        enableAggregatingTask = true
+    }
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
+    // Hilt
+    implementation(AppDependencies.hilt)
+    kapt(AppDependencies.hiltCompiler)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -131,4 +144,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    // modules
+    implementation(project(path = ProjectModules.COMMON))
 }

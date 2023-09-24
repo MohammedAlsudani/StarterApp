@@ -22,7 +22,7 @@ suspend inline fun <T : Any, U : Any> executeWithRetry(
         initialDelay: Long = 100, // 0.1 second
         maxDelay: Long = 1000, // 1 second
         factor: Double = 2.0,
-        block: suspend () -> NetworkResponse<T, U>
+        block: () -> NetworkResponse<T, U>
 ): NetworkResponse<T, U> {
     var currentDelay = initialDelay
     repeat(times - 1) {
@@ -54,8 +54,8 @@ operator fun <T : Any, U : Any> NetworkResponse<T, U>.invoke(): T? {
 
 fun <T> LiveData<T>.observeOnce(lifecycleOwner: LifecycleOwner, observer: Observer<T>) {
     observe(lifecycleOwner, object : Observer<T> {
-        override fun onChanged(t: T) {
-            observer.onChanged(t)
+        override fun onChanged(value: T) {
+            observer.onChanged(value)
             removeObserver(this)
         }
     })

@@ -1,7 +1,6 @@
 package com.common.database.converters
 
 import androidx.room.TypeConverter
-import com.common.database.entities.Answer
 import com.google.common.reflect.TypeToken
 import com.google.firebase.firestore.GeoPoint
 import com.google.gson.Gson
@@ -41,16 +40,4 @@ class DateConverter {
 
     @TypeConverter
     fun toMap(map: Map<String, String>?): String? = map?.let { gson.toJson(it) }
-
-
-    @TypeConverter
-    fun fromJson(json: String): List<Answer> {
-        val type = object : TypeToken<List<Answer>>() {}.type
-        return Gson().fromJson(json, type)
-    }
-
-    @TypeConverter
-    fun toJson(list: List<Answer>): String {
-        return Gson().toJson(list)
-    }
 }

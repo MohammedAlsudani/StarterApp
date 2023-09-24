@@ -11,11 +11,5 @@ import com.google.firebase.auth.FirebaseUser
  */
 interface CommonRepository {
 
-    suspend fun getCurrentUser(): CallResult<FirebaseUser?>
 
-    suspend fun createUpdateUser(user: FirebaseUser): CallResult<UserResponse?>
-
-    suspend fun signInAnonymously(): CallResult<FirebaseUser?>
-
-    suspend fun verifyingInvitationCode(invitationCode: String): CallResult<Boolean>
 }
